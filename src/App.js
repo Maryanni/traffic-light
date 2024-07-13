@@ -1,23 +1,35 @@
 import logo from './logo.svg';
 import './App.css';
+import Traffic from './components/Traffic';
 
 function App() {
+  let colors = [
+    {
+      id: 1,
+      color: '#ff0000',
+    },
+    {
+      id: 2,
+      color: '#ffff00',
+    },
+    {
+      id: 3,
+      color: '#0eb10e',
+    }
+
+  ]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='centerNew'>
+      <div className="container centerTraffic">
+        <div className='row'>
+          {colors.map((item, index) => {
+            return <div className='col-4' key={index}>
+              <Traffic fondo={item.color}/>
+
+            </div>
+          })}
+        </div>
+      </div>
     </div>
   );
 }
