@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 function Traffic(props) {
-    const [shadow, setShadow] = useState(false);
 
     const style = {
         background: props.fondo,
@@ -9,10 +8,8 @@ function Traffic(props) {
 
     return (
         <div className="container">
-            <button type="button" className={shadow === true ? 'shadowLight formLight' : 'formLight'} style={style}
-                onClick={() =>
-                    setShadow(!shadow)
-                }></button>
+            <button type="button" className={props.fondoActive ? 'shadowLight formLight' : 'formLight'} style={style}
+                onClick={props.onClick}></button>
         </div>
     )
 

@@ -1,8 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 import Traffic from './components/Traffic';
+import { useState } from 'react';
 
 function App() {
+  const [active ,setActive] = useState(false);
   let colors = [
     {
       id: 1,
@@ -24,7 +26,7 @@ function App() {
         <div className='row'>
           {colors.map((item, index) => {
             return <div className='col-4' key={index}>
-              <Traffic fondo={item.color} fondoId={item.id}/>
+              <Traffic fondo={item.color} fondoId={item.id} fondoActive={active===item.id} onClick={() => setActive(item.id)}/>
             </div>
           })}
         </div>
