@@ -24,8 +24,7 @@ function App() {
         <div className='row'>
           {colors.map((item, index) => {
             return <div className='col-4' key={index}>
-              <Traffic fondo={item.color}/>
-
+              <Traffic fondo={item.color} fondoId={item.id}/>
             </div>
           })}
         </div>
